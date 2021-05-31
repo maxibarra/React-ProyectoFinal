@@ -1,0 +1,10 @@
+.nav-item a{
+    color:red;
+    margin:14px;
+    font-size: 15px;
+    
+}
+.nav-item a:hover{
+    color:rgb(53, 158, 59);
+    
+}
