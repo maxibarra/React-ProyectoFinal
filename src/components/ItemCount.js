@@ -7,12 +7,12 @@ const ItemCount = () => {
 
      function aumentarCount(){
          initial <= 19 ?
-         setClicks(initial+1) : console.log("No hay mas stock disponible");
+         setClicks(initial+1): console.log("No hay mas stock disponible");
      };
 
     function disminuirCount(){
         initial > 1 ?
-        setClicks(initial-1) : console.log("No puede ser menor a 1");
+        setClicks(initial-1): console.log("No puede ser menor a 1");
     }; 
     
     
