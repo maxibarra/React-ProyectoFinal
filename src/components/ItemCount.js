@@ -1,18 +1,24 @@
 import React,{useState} from 'react'   
 
-
+const Min = 1;
+const Max = 20;
 const ItemCount = () => {
 
-    const [initial, setClicks] = useState(1);
+    const [count, setCount] = useState(Min);
 
      function aumentarCount(){
-         initial <= 19 ?
-         setClicks(initial+1): console.log("No hay mas stock disponible");
+        let valor = count + 1;
+        if(valor <= Max){
+            setCount(count + 1);
+        }
+         
      };
 
     function disminuirCount(){
-        initial > 1 ?
-        setClicks(initial-1): console.log("No puede ser menor a 1");
+        let valor = count - 1;
+        if(valor >= Min){
+            setCount(count - 1);
+        }
     }; 
     
     
@@ -20,9 +26,9 @@ const ItemCount = () => {
     return(
         <div>
             <button onClick={aumentarCount} > + </button> 
-            <div>{initial}</div>  
+            <div>{count}</div>  
             <button onClick={disminuirCount}> - </button> <br></br>
-            <button>Agregar al carrito</button>
+    
         </div>
     )
 }

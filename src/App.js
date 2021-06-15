@@ -4,13 +4,11 @@ import ItemListConteiner from './components/ItemListConteiner'
 import ItemCount from './components/ItemCount'
 
 
-
 function App(){
   return (
     <div className="App">
       <NavBar/>
       <ItemListConteiner greeting="Bienvenido a mi Web con react"/>
-      <ItemCount/>
     </div>
   );
 }

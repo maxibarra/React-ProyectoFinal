@@ -1,10 +1,13 @@
-import React from 'react'
-import './ItemListConteiner.css'
+import React from 'react';
+import './ItemListConteiner.css';
+import ItemList from './ItemList';
+
 
 function ItemListConteiner(props){
     return(
         <div className="ItemConteiner">
             <h3>{props.greeting}</h3>
+            <ItemList/>
         </div>
     )
 }
