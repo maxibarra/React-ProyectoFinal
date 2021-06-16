@@ -1,40 +1,45 @@
  [
     {
+        "id":1,
         "nombre": "Remera M/L",
         "descripcion":"remera mangas largas",
         "precio": 4000,
-        "id":1
+        "imagen":"/assets/shop-cart.png"
+        
     },
     {
+        "id":2,
         "nombre":" Remera M/C ",
         "descripcion":"remera mangas cortas",
         "precio": 2000,
-        "id":2
+        "imagen":"/assets/shop-cart.png"
     },
     {
+        "id":3,
         "nombre":"Buzo polar",
         "descripcion":"buzo polar",
         "precio": 3000,
-        "id":3
+        "imagen":"/assets/shop-cart.png"
     },
     {
+        "id":4,
         "nombre":"Jean",
         "descripcion":"Jean",
         "precio": 4000,
-        "id":4
+        "imagen":"/assets/shop-cart.png"
     },
     {
+        "id":5,
         "nombre":"Joggin",
         "descripcion":"Joggin",
         "precio": 3000,
-        "id":5
-        
+        "imagen":"/assets/shop-cart.png"
     },
     {
+        "id":6,
         "nombre":"Parca",
         "descripcion":"Parca",
         "precio": 7000,
-        "id":6
-        
+        "imagen":"/assets/shop-cart.png"
     }
 ]

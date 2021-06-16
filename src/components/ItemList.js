@@ -9,8 +9,11 @@ function ItemList(){
 return(
     <div>
         {
-            productos.map((Item,index)=>{return <Card style={{ width:'18rem',display:'inline-block',margin:'5px',border:'5px double red'}}>
-            <Card.Body>   
+            productos.map((Item,index)=>{return <Card style={{ width:'16rem',display:'inline-block',margin:'15px',border:'5px double blue'}}>
+            <Card.Body> 
+                <div>
+                <img src={Item.imagen} alt=""  style={{width:'150px',margin:"14px"}}/>
+                </div>
               <Card.Title id={index}>{Item.nombre}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{Item.descripcion}</Card.Subtitle>
               <Card.Text>
