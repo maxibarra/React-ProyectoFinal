@@ -24,10 +24,10 @@ const ItemCount = () => {
     
     
     return(
-        <div>
-            <button onClick={aumentarCount} > + </button> 
-            <div>{count}</div>  
-            <button onClick={disminuirCount}> - </button> <br></br>
+        <div style={{padding:"10px",paddingLeft:"65px",textAlign:"center",display:"flex",alignItems:"center"}}>
+            <button style={{fontSize:"30px",display:"inline",color:"red",border:"none",background:"none"}} onClick={disminuirCount} > - </button> 
+            <div style={{margin:"10px"}}>{count}</div>  
+            <button style={{fontSize:"30px",display:"inline",color:"green",border:"none",background:"none"}}onClick={aumentarCount}> + </button> <br></br>
     
         </div>
     )
