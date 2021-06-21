@@ -1,35 +1,29 @@
-import React from 'react';
-import {Nav} from 'react-bootstrap';
-import CartWidget from './CartWidget';
-import '../styles/NavBar.css';
+import React from "react";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
+import "../styles/NavBar.css";
 
 
-
-
-function NavBar(){
-    return (
-
-      <Nav variant="tabs" defaultActiveKey="/home">
-        <Nav.Item>
-          <Nav.Link href="/home"> Home </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link  eventKey="link-1"> Productos </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link  eventKey="link-2" >  About </Nav.Link>
-        </Nav.Item>  
-        <Nav.Item>
-          <Nav.Link  eventKey="link-3" > Contact  </Nav.Link>
-        </Nav.Item>  
-         <Nav.Item>
-         <CartWidget/>
-         </Nav.Item>
-          
-    
-       </Nav>
-    );
- 
+function NavBar() {
+  return (
+    <Navbar bg="dark" variant="dark">
+      <Navbar.Brand href="/">Max Shop</Navbar.Brand>
+      <Nav className="mr-auto">
+        <NavLink activeClassName="selected" exact to="/">
+          Home
+        </NavLink>
+        <NavLink activeClassName="selected" to="/About">About</NavLink>
+        <NavLink activeClassName="selected" to="/Products">Products</NavLink>
+        <NavLink activeClassName="selected" to="/Contact">Contact</NavLink>
+      </Nav>
+      <Form inline>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+        <Button variant="outline-info">Search</Button>
+        <CartWidget />
+      </Form>
+    </Navbar>
+  );
 }
 
 export default NavBar;

@@ -1,7 +1,14 @@
-.nav{
-    background-color:rgba(6, 12, 102, 0.904);
+a{
+    margin: 13px;
+    color:#999;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+color:white;
+text-decoration:none;
 }
 
-.nav a:hover{
+.selected{
     color:red;
 }

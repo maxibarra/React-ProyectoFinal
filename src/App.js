@@ -1,15 +1,14 @@
-import NavBar from './components/NavBar';
+import AppRouter from './routers/AppRouter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ItemDetailConteiner from './components/ItemDetailConteiner';
+
 
 
 
 function App(){
   return (
-    <div className="App">
-      <NavBar/>
-      <ItemDetailConteiner/>
+    <div className="App"> 
+    <AppRouter/>
     </div>
   );
 }

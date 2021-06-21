@@ -11,7 +11,7 @@ const ItemDetailConteiner = () => {
 
   const obtenerDatos = async () => {
     try {
-      const datos = await fetch(`https://fakestoreapi.com/products?limit=4&offset10`);
+      const datos = await fetch(`https://fakestoreapi.com/products?limit=9&offset10`);
       const res = await datos.json();
       setData(res);
     } catch (error) {
@@ -47,7 +47,7 @@ const ItemDetailConteiner = () => {
            <Card.Text>  $ {item.price}</Card.Text>
            <ItemCount/>
            <Card.Link href="#">Comprar</Card.Link>
-           <Card.Link href="#">Ver articulo</Card.Link>
+           <Card.Link href="">Ver articulo</Card.Link>
          </Card.Body>
        </Card>
         ))}
