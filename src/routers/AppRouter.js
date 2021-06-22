@@ -4,8 +4,8 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Products from "../pages/Products";
 import Contact from "../pages/Contact";
-import ItemDetail from "../components/ItemDetail";
 import Cart from "../pages/Cart";
+import ItemDetail from "../components/ItemDetail";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function AppRouter() {
@@ -18,7 +18,7 @@ function AppRouter() {
         <Route path="/products" component={Products} />
         <Route path="/contact" component={Contact} />
         <Route path="/cart" component={Cart} />
-        <Route path="" component={ItemDetail} />
+        <Route path="/ItemDetail/:id" component={ItemDetail} />
       </Switch>
     </Router>
   );

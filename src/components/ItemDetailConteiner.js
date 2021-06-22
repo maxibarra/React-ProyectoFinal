@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetailConteiner = () => {
   const [data, setData] = useState([]);
@@ -11,7 +12,9 @@ const ItemDetailConteiner = () => {
 
   const obtenerDatos = async () => {
     try {
-      const datos = await fetch(`https://fakestoreapi.com/products?limit=9&offset10`);
+      const datos = await fetch(
+        `https://fakestoreapi.com/products?limit=9&offset10`
+      );
       const res = await datos.json();
       setData(res);
     } catch (error) {
@@ -19,40 +22,40 @@ const ItemDetailConteiner = () => {
     }
   };
 
-
   return (
-    
-      <div>
-        {data.map((item) => (
-           <Card 
-           key={item.id} 
-
-           style={{ 
-             width:'16rem',
-             display:'inline-block',
-             margin:'15px'
-             }}>
-         <Card.Body> 
-             <div>
-             <img
-             src={item.image} 
-             alt=""  
-             style={{width:'150px',margin:"14px"}}
-             />
-             </div>
-           <Card.Title >{item.title}</Card.Title>
-           <Card.Subtitle className="mb-2 text-muted">
-             {item.description}
-             </Card.Subtitle>
-           <Card.Text>  $ {item.price}</Card.Text>
-           <ItemCount/>
-           <Card.Link href="#">Comprar</Card.Link>
-           <Card.Link href="">Ver articulo</Card.Link>
-         </Card.Body>
-       </Card>
-        ))}
-      </div>
-    
+    <div style={{ background: "rgb(247,238,224)", padding: "4rem 15rem" }}>
+      {data.map((item) => (
+        <Card
+          key={item.id}
+          style={{
+            width: "45rem",
+            padding: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            margin: "15px",
+          }}
+        >
+          <Card.Img
+            style={{ width: "10rem", height: "10rem" }}
+            src={item.image}
+          />
+          <Card.Body>
+            <Card.Title>{item.title}</Card.Title>
+            <Card.Text>{item.category}</Card.Text>
+            <Card.Text>{item.description}</Card.Text>
+            <Card.Text>$ {item.price}</Card.Text>
+            <ItemCount />
+            <Card.Body style={{ background: "rgb(238,238,240)" }}>
+              <Link to={`/ItemDetail/${item.id}`}>
+                <Card.Link style={{ paddingLeft: "9rem" }}>
+                  Ver Detalle
+                </Card.Link>
+              </Link>
+            </Card.Body>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
   );
 };
 
