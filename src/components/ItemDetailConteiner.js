@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
-import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
 const ItemDetailConteiner = () => {
@@ -36,7 +35,7 @@ const ItemDetailConteiner = () => {
           }}
         >
           <Card.Img
-            style={{ width: "10rem", height: "10rem" }}
+            style={{marginTop:"4rem", width: "10rem", height: "10rem" }}
             src={item.image}
           />
           <Card.Body>
@@ -44,7 +43,6 @@ const ItemDetailConteiner = () => {
             <Card.Text>{item.category}</Card.Text>
             <Card.Text>{item.description}</Card.Text>
             <Card.Text>$ {item.price}</Card.Text>
-            <ItemCount />
             <Card.Body style={{ background: "rgb(238,238,240)" }}>
               <Link to={`/ItemDetail/${item.id}`}>
                 <Card.Link style={{ paddingLeft: "9rem" }}>

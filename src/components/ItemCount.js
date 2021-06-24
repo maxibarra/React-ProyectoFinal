@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
-const Min = 1;
+
+
+
+const Min = 0;
 const Max = 10;
 const ItemCount = () => {
   const [count, setCount] = useState(Min);
@@ -20,43 +23,62 @@ const ItemCount = () => {
   }
 
   return (
-    <div
-      style={{
-        paddingLeft: "10rem",
-        textAlign: "center",
-        display: "flex",
-        alignItems: "center",
-        margin: "10px",
-      }}
-    >
-      <button
+    <div>
+      
+      <div
         style={{
-          fontSize: "30px",
-          display: "inline",
-          color: "white",
-          border: "red",
-          background: "red",
+          paddingLeft: "10rem",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          marginBottom: "2rem",
         }}
-        onClick={disminuirCount}
       >
-        {" "}
-        -{" "}
-      </button>
-      <div style={{ margin: "10px" }}>{count}</div>
-      <button
-        style={{
-          fontSize: "30px",
-          display: "inline",
-          color: "white",
-          border: "none",
-          background: "green",
-        }}
-        onClick={aumentarCount}
-      >
-        {" "}
-        +{" "}
-      </button>{" "}
-      <br></br>
+        <div
+          style={{
+            fontSize: "30px",
+            display: "inline",
+            color: "white",
+            padding: "5px",
+            border: "red",
+            background: "red",
+            cursor: "pointer",
+          }}
+          onClick={disminuirCount}
+        >
+          {" "}
+          -{" "}
+        </div>
+        <div style={{ margin: "10px" }}>{count}</div>
+        <div
+          style={{
+            fontSize: "30px",
+            display: "inline",
+            color: "white",
+            padding: "5px",
+            border: "none",
+            background: "green",
+            cursor: "pointer",
+          }}
+          onClick={aumentarCount}
+        >
+          {" "}
+          +{" "}
+        </div>{" "}
+      </div>
+      <div>
+        <button 
+          style={{
+            background: "rgb(238,238,240)",
+            padding: "15px 70px 15px 70px",
+            marginLeft: "5rem",
+            border: "none",
+          }} 
+        >
+          {" "}
+          agregar al carrito{" "}
+        </button>
+      </div>
     </div>
   );
 };

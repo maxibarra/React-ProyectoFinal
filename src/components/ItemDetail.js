@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import ItemCount from "./ItemCount";
-import { Link } from "react-router-dom";
 
 const ItemDetail = () => {
   const { id } = useParams();
@@ -12,7 +11,7 @@ const ItemDetail = () => {
 
   useEffect(() => {
     obtenerDetalle();
-  }, []);
+  },[]);
 
   const obtenerDetalle = async () => {
     try {
@@ -38,7 +37,7 @@ const ItemDetail = () => {
           }}
         >
           <Card.Img
-            style={{ width: "10rem", height: "10rem" }}
+            style={{marginTop:"5rem",width: "10rem", height: "10rem" }}
             src={detalle.image}
           />
           <Card.Body>
@@ -46,13 +45,9 @@ const ItemDetail = () => {
             <Card.Text>{detalle.category}</Card.Text>
             <Card.Text>{detalle.description}</Card.Text>
             <Card.Text>$ {detalle.price}</Card.Text>
+          
+            <Card.Body>
             <ItemCount />
-            <Card.Body style={{ background: "rgb(238,238,240)" }}>
-              <Link to={`/cart`}>
-                <Card.Link style={{ paddingLeft: "8rem" }}>
-                  agregar al carrito
-                </Card.Link>
-              </Link>
             </Card.Body>
           </Card.Body>
         </Card>

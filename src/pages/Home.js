@@ -1,9 +1,11 @@
 import React from 'react'
-
-function Home() {
+import ControlledCarousel from '../components/Carrousel'
+import ItemListConteiner from '../components/ItemListConteiner'
+function Home(){
     return (
         <div>
-            hola soy un home
+            <ControlledCarousel/>
+            <ItemListConteiner/>
         </div>
     )
 }
