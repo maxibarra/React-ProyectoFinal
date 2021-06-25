@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 
@@ -8,6 +9,7 @@ const Max = 10;
 const ItemCount = () => {
   const [count, setCount] = useState(Min);
 
+ 
   function aumentarCount() {
     let valor = count + 1;
     if (valor <= Max) {
@@ -67,17 +69,29 @@ const ItemCount = () => {
         </div>{" "}
       </div>
       <div>
-        <button 
-          style={{
-            background: "rgb(238,238,240)",
-            padding: "15px 70px 15px 70px",
-            marginLeft: "5rem",
-            border: "none",
-          }} 
-        >
-          {" "}
-          agregar al carrito{" "}
-        </button>
+        
+        {count !== 0 ? (
+
+          <Link to="/cart">
+          <Card.Link>
+           <button 
+           style={{
+             background: "rgb(238,238,240)",
+             padding: "5px 10px 5px 70px",
+             marginLeft: "5rem",
+             border: "none",
+           }} 
+         >
+           {" "}
+           agregar al carrito{" "}
+         </button>
+         </Card.Link>
+        </Link>
+        
+        ) : null}
+        
+       
+       
       </div>
     </div>
   );
