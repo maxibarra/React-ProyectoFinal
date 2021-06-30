@@ -13,9 +13,8 @@ const ItemCount = ({ stock, inicio, producto }) => {
 
   let ArrayProducto = {
     producto: producto.title,
-    categoria: producto.category,
     precio: producto.price,
-    cantidad: { count } ,
+    cantidad: { count },
   };
 
   function aumentarCount() {
