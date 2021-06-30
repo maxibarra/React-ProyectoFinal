@@ -1,15 +1,12 @@
-import AppRouter from './routers/AppRouter';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import AppRouter from "./routers/AppRouter";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { CartProvider } from "./components/CartContext";
 
-
-
-
-
-function App(){
+function App() {
   return (
-    <div className="App"> 
-    <AppRouter/>
-    </div>
+    <CartProvider>
+      <AppRouter />
+    </CartProvider>
   );
 }
 

@@ -1,17 +1,28 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import UseCart from "./CartContext";
 
 
+let Min = 0;
+let Max = 10;
 
-const Min = 0;
-const Max = 10;
-const ItemCount = () => {
+const ItemCount = ({ stock, inicio, producto }) => {
   const [count, setCount] = useState(Min);
+  const { AddToCart } = UseCart();
 
- 
+  let ArrayProducto = {
+    producto: producto.title,
+    categoria: producto.category,
+    precio: producto.price,
+    cantidad: { count } ,
+  };
+
   function aumentarCount() {
     let valor = count + 1;
+    if (count < stock) {
+      setCount(count + 1);
+    }
     if (valor <= Max) {
       setCount(count + 1);
     }
@@ -19,6 +30,11 @@ const ItemCount = () => {
 
   function disminuirCount() {
     let valor = count - 1;
+
+    if (count > inicio) {
+      setCount(count - 1);
+    }
+
     if (valor >= Min) {
       setCount(count - 1);
     }
@@ -26,7 +42,6 @@ const ItemCount = () => {
 
   return (
     <div>
-      
       <div
         style={{
           paddingLeft: "10rem",
@@ -69,29 +84,26 @@ const ItemCount = () => {
         </div>{" "}
       </div>
       <div>
-        
-        {count !== 0 ? (
-
+        {count > 0 ? (
           <Link to="/cart">
-          <Card.Link>
-           <button 
-           style={{
-             background: "rgb(238,238,240)",
-             padding: "5px 10px 5px 70px",
-             marginLeft: "5rem",
-             border: "none",
-           }} 
-         >
-           {" "}
-           agregar al carrito{" "}
-         </button>
-         </Card.Link>
-        </Link>
-        
-        ) : null}
-        
-       
-       
+            <Card.Link>
+              <button
+                onClick={() => {
+                  AddToCart(ArrayProducto);
+                }}
+                style={{
+                  background: "rgb(238,238,240)",
+                  padding: "5px 10px 5px 70px",
+                  marginLeft: "5rem",
+                  border: "none",
+                }}
+              >
+                {" "}
+                agregar al carrito{" "}
+              </button>
+            </Card.Link>
+          </Link>
+        ) : (null) }
       </div>
     </div>
   );
