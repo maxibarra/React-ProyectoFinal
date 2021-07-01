@@ -7,19 +7,20 @@ import UseCart from "./CartContext";
 let Min = 0;
 let Max = 10;
 
-const ItemCount = ({ stock, inicio, producto }) => {
+const ItemCount = ({producto}) => {
   const [count, setCount] = useState(Min);
   const { AddToCart } = UseCart();
 
   let ArrayProducto = {
     producto: producto.title,
     precio: producto.price,
-    cantidad: { count },
+    cantidad:  count ,
   };
 
+  
   function aumentarCount() {
     let valor = count + 1;
-    if (count < stock) {
+    if (count < Max) {
       setCount(count + 1);
     }
     if (valor <= Max) {
@@ -30,7 +31,7 @@ const ItemCount = ({ stock, inicio, producto }) => {
   function disminuirCount() {
     let valor = count - 1;
 
-    if (count > inicio) {
+    if (count > Min) {
       setCount(count - 1);
     }
 
@@ -102,7 +103,7 @@ const ItemCount = ({ stock, inicio, producto }) => {
               </button>
             </Card.Link>
           </Link>
-        ) : (null) }
+        ) : (console.log("no hay boton")) }
       </div>
     </div>
   );

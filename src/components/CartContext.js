@@ -13,6 +13,7 @@ export function CartProvider({children}){
         setCart([...cart,obj])
         console.log(cart)
     }
+    
     return (
         <CartContext.Provider value={{cart, AddToCart}}>
             {children}
