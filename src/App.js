@@ -1,6 +1,6 @@
 import AppRouter from "./routers/AppRouter";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CartProvider } from "./components/CartContext";
+import { CartProvider } from "./CartContext";
 
 function App() {
   return (

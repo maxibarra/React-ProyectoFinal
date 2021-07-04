@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import UseCart from "./CartContext";
+import UseCart from "../CartContext";
 
 
 let Min = 0;

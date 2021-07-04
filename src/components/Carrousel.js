@@ -13,10 +13,7 @@ function ControlledCarousel() {
             src="/assets/Ejemplo.png"
             alt="First slide"
           />
-          <Carousel.Caption>
-            <h3></h3>
-            <p></p>
-          </Carousel.Caption>
+          
         </Carousel.Item>
         <Carousel.Item>
           <img style={{height:'50rem'}}
