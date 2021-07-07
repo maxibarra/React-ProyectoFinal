@@ -4,19 +4,21 @@ import { Link } from "react-router-dom";
 import UseCart from "../CartContext";
 
 
+
 let Min = 0;
 let Max = 10;
 
 const ItemCount = ({producto}) => {
   const [count, setCount] = useState(Min);
+
   const { AddToCart } = UseCart();
 
   let ArrayProducto = {
-    id:producto.id,
-    producto: producto.title,
-    precio: producto.price,
-    cantidad:  producto.count,
-    total: producto.price*producto.count
+    "nombre": producto.title,
+   "precio": producto.price,
+    "cantidad": count,
+    "id":producto.id,
+    "total":count*producto.price
   };
 
   
@@ -86,8 +88,8 @@ const ItemCount = ({producto}) => {
         </div>{" "}
       </div>
       <div>
-        {count > 0 ? (
-          <Link to="/cart">
+        {count != 0 ? (
+          <Link to="/Cart">
             <Card.Link>
               <button
                 onClick={() => {
@@ -105,7 +107,7 @@ const ItemCount = ({producto}) => {
               </button>
             </Card.Link>
           </Link>
-        ) : (console.log("no hay boton")) }
+        ) : null }
       </div>
     </div>
   );

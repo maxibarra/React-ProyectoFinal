@@ -15,30 +15,31 @@ export function CartProvider({children}){
     }, [cart])
 
     
-    function AddToCart(obj){
-        setCart([...cart,obj])
-        console.log(cart)
-    }
+    function AddToCart(obj) {
+        setCart([...cart, obj]);
+       
+      }
     
    
     const totalCart = () => {
         let total = 0;
         cart.forEach((producto) => {
-            total = producto.total;
+          total += producto.total;
         });
         return total;
-        
-    }
-    function removeFromCart(obj){
-        let removeItem = cart.filter(function(objeto){
-            return objeto.id !== obj.id;
-        })
-        setCart(removeItem);
-    }
+      };
+
+    function removeFromCart(obj) {
     
-    function removeAllCart(){
+        let removeItem = cart.filter(function(objeto){ 
+          return objeto.id !== obj.id; 
+      });
+        setCart(removeItem);
+      }
+
+      function removeAllCart() {
         setCart([]);
-    }
+      }
 
     
    

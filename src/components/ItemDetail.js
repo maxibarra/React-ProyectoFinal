@@ -5,7 +5,7 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail = () => {
   const { id } = useParams();
-  console.log(id);
+  
 
   const [detalle, setDetalle] = useState([null]);
 

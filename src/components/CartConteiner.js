@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import CartItem from "./CartItem";
 import UseCart from "../CartContext";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 
@@ -22,7 +23,11 @@ function CartConteiner() {
       return (
         <Container className="mt-5">
           <Row>
-            <Col xs={5} className="font-weight-bold">
+            <Col xs={2} className="font-weight-bold">
+              <p>Acciones</p>
+            </Col>
+
+            <Col xs={3} className="font-weight-bold">
               <p>Producto</p>
             </Col>
             <Col xs={2} className="font-weight-bold text-center">
@@ -36,36 +41,38 @@ function CartConteiner() {
             </Col>
           </Row>
           
-          {cart.map((item,index) => {
+          {cart.map((producto,index) => {
+          
             return (
-              <CartItem
-                key={index}
-                id={item.title}
-                producto={item.title}
-                precio={item.price}
-                cantidad={item.count}
-                total={item.total}
+              <CartItem key={index}            
+                id={producto.id}
+                nombre={producto.nombre}
+                precio={producto.precio}
+                cantidad={producto.cantidad}
+                total={producto.precio*producto.cantidad} 
+                  
               />
             );
           })}
           <Row className="justify-content-end align-items-center">
             <Col>
+            <Link to="/products">
               <Button
                 onClick={() => {
                   removeAllCart();
                 }}
               >
-                Borrar Carrito
+                Borrar Todo
               </Button>
+              </Link>
             </Col>
             <Col xs={3} className="text-right">
               <p className="cursive font-weight-bold h4 text-primary">Total Compra</p>
             </Col>
             <Col xs={3} className="text-center">
-              <p>$ {total}</p>
+              <p>${total}</p>
             </Col>
           </Row>
-          {console.log(cart)}
         </Container>
       );
     }
