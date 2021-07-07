@@ -5,6 +5,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 
 
 
+
 function CartConteiner() {
     const [total, setTotal] = useState(0);
     const { cart, totalCart, removeAllCart } = UseCart();
@@ -12,7 +13,7 @@ function CartConteiner() {
     const ObtenerTotal = () => {
       setTotal(totalCart());
     };
-  
+ 
     useEffect(() => {
       ObtenerTotal();
     }, [cart]);
@@ -34,11 +35,12 @@ function CartConteiner() {
               <p>Total</p>
             </Col>
           </Row>
-          {cart.map((item, index) => {
+          
+          {cart.map((item,index) => {
             return (
               <CartItem
                 key={index}
-                id={item.id}
+                id={item.title}
                 producto={item.title}
                 precio={item.price}
                 cantidad={item.count}
@@ -57,7 +59,7 @@ function CartConteiner() {
               </Button>
             </Col>
             <Col xs={3} className="text-right">
-              <p className="cursive font-weight-bold h4 text-primary">Total</p>
+              <p className="cursive font-weight-bold h4 text-primary">Total Compra</p>
             </Col>
             <Col xs={3} className="text-center">
               <p>$ {total}</p>

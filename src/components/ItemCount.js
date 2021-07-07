@@ -12,9 +12,11 @@ const ItemCount = ({producto}) => {
   const { AddToCart } = UseCart();
 
   let ArrayProducto = {
+    id:producto.id,
     producto: producto.title,
     precio: producto.price,
-    cantidad:  count ,
+    cantidad:  producto.count,
+    total: producto.price*producto.count
   };
 
   

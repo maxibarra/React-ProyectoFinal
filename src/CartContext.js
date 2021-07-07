@@ -14,29 +14,34 @@ export function CartProvider({children}){
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart])
 
+    
     function AddToCart(obj){
         setCart([...cart,obj])
         console.log(cart)
     }
     
+   
+    const totalCart = () => {
+        let total = 0;
+        cart.forEach((producto) => {
+            total = producto.total;
+        });
+        return total;
+        
+    }
     function removeFromCart(obj){
         let removeItem = cart.filter(function(objeto){
             return objeto.id !== obj.id;
         })
         setCart(removeItem);
     }
+    
     function removeAllCart(){
         setCart([]);
     }
 
-    const totalCart = () => {
-        let total = 0;
-        cart.forEach((producto) => {
-            total += producto.total;
-        });
-        return total;
-    }
-
+    
+   
 
     return (
         <CartContext.Provider value={{cart, AddToCart,totalCart, removeFromCart, removeAllCart}}>

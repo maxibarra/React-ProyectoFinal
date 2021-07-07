@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import CartConteiner from '../components/CartConteiner';
-import Modal from 'react-bootstrap/Modal'
+
 
 function Cart() {
     return (
