@@ -54,6 +54,9 @@ function CartConteiner() {
               />
             );
           })}
+          
+          <hr style={{border:"1px solid"}}></hr>
+
           <Row className="justify-content-end align-items-center">
             <Col>
             <Link to="/products">

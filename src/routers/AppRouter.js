@@ -15,9 +15,9 @@ function AppRouter() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/About" component={About} />
-        <Route path="/Products" component={Products} />
-        <Route path="/Contact" component={Contact} />
-        <Route path="/Cart" component={Cart} />
+        <Route path="/products" component={Products} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/cart" component={Cart} />
         <Route path="/ItemDetail/:id" component={ItemDetail} />
       </Switch>
     </Router>

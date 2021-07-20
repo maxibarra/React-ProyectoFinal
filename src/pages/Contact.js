@@ -1,11 +1,12 @@
 import React from 'react'
+import Formulario from '../components/Formulario'
 
-function Contact() {
+function Contacto() {
     return (
-        <div>
-            Hola soy contact
+        <div style={{background:"lightBlue"}} >
+            <Formulario />
         </div>
     )
 }
 
-export default Contact
+export default Contacto

@@ -7,7 +7,7 @@ const ItemDetail = () => {
   const { id } = useParams();
   
 
-  const [detalle, setDetalle] = useState([null]);
+  const [detalle, setDetalle] = useState([]);
 
   useEffect(() => {
     obtenerDetalle();

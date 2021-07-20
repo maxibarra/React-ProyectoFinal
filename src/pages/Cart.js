@@ -1,30 +1,32 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import CartConteiner from "../components/CartConteiner";
 import { Link } from "react-router-dom";
+import UseCart from "../CartContext";
 
 function Cart() {
+  const { cart } = UseCart();
+
   return (
     <>
       <Container fluid className="bg-cart">
         <Row className="align-items-center h-100">
-          <Col xs lg={4} md={6} className="ml-auto">
+          <Col xs lg={7} md={6} className="ml-auto">
             <div className="container-main-all-texts">
-              <h1 className="font-weight-bold cursive text-primary">
-                Su Carrito
-              </h1>
+              <h1 className="font-weight-bold cursive text-primary">Carrito</h1>
             </div>
-            </Col>
-            <Col xs lg={2} md={6} className="ml-auto">
-              <Link to="./products">
-                <Button>Seguir Comprando</Button>
-              </Link>
-            </Col>   
-        </Row>
-        <Row>
-        <Col xs lg={12} md={6} className="ml-auto">
+          </Col>
+         
+          <Col xs lg={8} md={6} className="ml-auto">
             <div className="container-main-all-texts">
-              <CartConteiner />
+              {cart.length !== 0 ? (
+                <CartConteiner />
+              ) : (
+                <p className="font-weight-bold cursive">
+                  Su carrito se encuentra vacio, para comprar presione
+                  <Link to="./products">AQUI</Link>
+                </p>
+              )}
             </div>
           </Col>
         </Row>

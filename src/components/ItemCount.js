@@ -88,7 +88,7 @@ const ItemCount = ({producto}) => {
         </div>{" "}
       </div>
       <div>
-        {count != 0 ? (
+        {count !== 0 ? (
           <Link to="/Cart">
             <Card.Link>
               <button
