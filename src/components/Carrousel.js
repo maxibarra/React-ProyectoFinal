@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-
+import '../styles/carrousel.css'
 
 function ControlledCarousel() {
    
@@ -8,7 +8,7 @@ function ControlledCarousel() {
     return (
         <Carousel >
         <Carousel.Item >
-          <img style={{height:'50rem'}}
+          <img 
             className="d-block w-100"
             src="/assets/Ejemplo.png"
             alt="First slide"
@@ -16,7 +16,7 @@ function ControlledCarousel() {
           
         </Carousel.Item>
         <Carousel.Item>
-          <img style={{height:'50rem'}}
+          <img 
             className="d-block w-100"
             src="/assets/ejemplo2.png"
             alt="Second slide"
@@ -27,7 +27,7 @@ function ControlledCarousel() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img style={{height:'50rem'}}
+          <img
             className="d-block w-100"
             src="/assets/ejemplo3.png"
             alt="Third slide"

@@ -21,7 +21,7 @@ function CartConteiner() {
   
     if (cart.length > 0) {
       return (
-        <Container className="mt-5">
+        <Container className="mt-5" style={{marginBottom:"230px"}}>
           <Row>
             <Col xs={2} className="font-weight-bold">
               <p>Acciones</p>

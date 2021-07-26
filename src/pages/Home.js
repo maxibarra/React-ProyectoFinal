@@ -1,11 +1,15 @@
-import React from 'react'
-import ControlledCarousel from '../components/Carrousel'
-import ItemListConteiner from '../components/ItemListConteiner'
+import React from 'react';
+import ControlledCarousel from '../components/Carrousel';
+import '../styles/home.css'
+import Products from './Products';
+
+
+
 function Home(){
     return (
-        <div>
-            <ControlledCarousel/>
-            <ItemListConteiner/>
+        <div className="Inicio">
+            <ControlledCarousel/>   
+           
         </div>
     )
 }

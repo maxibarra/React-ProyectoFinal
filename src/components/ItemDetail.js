@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import ItemCount from "./ItemCount";
+import '../styles/ItemDetailConteiner.css'
 
 const ItemDetail = () => {
   const { id } = useParams();
   
-
   const [detalle, setDetalle] = useState([]);
 
   useEffect(() => {
@@ -23,17 +23,14 @@ const ItemDetail = () => {
     }
   };
   return (
-    <div
-      style={{ background: "rgb(247,238,224)", padding: "5rem 20rem 12rem" }}
-    >
+    <div style={{backgroundColor:"rgb(238,238,240)",padding:"4rem 15rem"}}>
       {detalle !== null ? (
         <Card
           style={{
-            width: "40rem",
-            padding: "1rem",
+            width: "35rem",
             display: "flex",
             flexDirection: "row",
-            margin: "10px",
+            margin: "15px",
           }}
         >
           <Card.Img

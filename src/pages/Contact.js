@@ -1,9 +1,11 @@
 import React from 'react'
 import Formulario from '../components/Formulario'
+import '../styles/contacto.css'
 
-function Contacto() {
+
+function Contacto(){
     return (
-        <div style={{background:"lightBlue"}} >
+        <div className="contacto">
             <Formulario />
         </div>
     )

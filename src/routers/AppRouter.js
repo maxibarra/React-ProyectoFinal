@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import Cart from "../pages/Cart";
 import ItemDetail from "../components/ItemDetail";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Footer from "../components/footer";
 
 function AppRouter() {
   return (
@@ -20,7 +21,9 @@ function AppRouter() {
         <Route path="/cart" component={Cart} />
         <Route path="/ItemDetail/:id" component={ItemDetail} />
       </Switch>
+      <Footer/>
     </Router>
+    
   );
 }
 

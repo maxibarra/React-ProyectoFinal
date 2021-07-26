@@ -1,0 +1,27 @@
+.countContainer{
+    padding-left:4rem;
+    display:flex;
+    margin-bottom:15px;
+    font-size:30px;
+    color: white;
+    cursor: pointer;
+    
+}
+.disminuir{
+    background:red;
+    border-radius: 20%;
+    padding:15px;
+}
+
+.aumentar{
+    background:green;
+    border-radius: 20%;
+    padding:15px;
+}
+.agregarAlCarrito{
+    background:rgb(238,238,240);
+    padding:15px 10px 15px 10px;
+    border:2px solid;
+    margin-left:25px;
+   text-align:center;
+}

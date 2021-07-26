@@ -3,7 +3,7 @@ import { Container, Row, Col} from "react-bootstrap";
 import CartConteiner from "../components/CartConteiner";
 import { Link } from "react-router-dom";
 import UseCart from "../CartContext";
-
+import '../styles/cart.css'
 function Cart() {
   const { cart } = UseCart();
 
@@ -11,13 +11,13 @@ function Cart() {
     <>
       <Container fluid className="bg-cart">
         <Row className="align-items-center h-100">
-          <Col xs lg={7} md={6} className="ml-auto">
+          <Col xs lg={12} md={6} className="ml-auto">
             <div className="container-main-all-texts">
-              <h1 className="font-weight-bold cursive text-primary">Carrito</h1>
+              <h1 className="font-weight-bold cursive">Carrito</h1>
             </div>
           </Col>
          
-          <Col xs lg={8} md={6} className="ml-auto">
+          <Col xs lg={12} md={6} className="ml-auto">
             <div className="container-main-all-texts">
               {cart.length !== 0 ? (
                 <CartConteiner />

@@ -2,26 +2,24 @@ import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import UseCart from "../CartContext";
-
-
+import "../styles/itemCount.css";
 
 let Min = 0;
 let Max = 10;
 
-const ItemCount = ({producto}) => {
+const ItemCount = ({ producto }) => {
   const [count, setCount] = useState(Min);
 
   const { AddToCart } = UseCart();
 
   let ArrayProducto = {
-    "nombre": producto.title,
-   "precio": producto.price,
-    "cantidad": count,
-    "id":producto.id,
-    "total":count*producto.price
+    nombre: producto.title,
+    precio: producto.price,
+    cantidad: count,
+    id: producto.id,
+    total: count * producto.price,
   };
 
-  
   function aumentarCount() {
     let valor = count + 1;
     if (count < Max) {
@@ -46,68 +44,35 @@ const ItemCount = ({producto}) => {
 
   return (
     <div>
-      <div
-        style={{
-          paddingLeft: "10rem",
-          textAlign: "center",
-          display: "flex",
-          alignItems: "center",
-          marginBottom: "2rem",
-        }}
-      >
-        <div
-          style={{
-            fontSize: "30px",
-            display: "inline",
-            color: "white",
-            padding: "5px",
-            border: "red",
-            background: "red",
-            cursor: "pointer",
-          }}
-          onClick={disminuirCount}
-        >
-          {" "}
-          -{" "}
+      <div >
+        <div className="countContainer">
+          <div className="disminuir"  onClick={disminuirCount}>
+             -
+          </div>
+          
+          <div className="aumentar"
+            onClick={aumentarCount}>          
+            +
+          </div>
         </div>
-        <div style={{ margin: "10px" }}>{count}</div>
-        <div
-          style={{
-            fontSize: "30px",
-            display: "inline",
-            color: "white",
-            padding: "5px",
-            border: "none",
-            background: "green",
-            cursor: "pointer",
-          }}
-          onClick={aumentarCount}
-        >
-          {" "}
-          +{" "}
-        </div>{" "}
       </div>
+      <div style={{ paddingLeft:"60px" }}>
+        <p>Cantidad: {count}</p>
+      </div>
+
       <div>
         {count !== 0 ? (
           <Link to="/Cart">
             <Card.Link>
-              <button
+              <button className="agregarAlCarrito"
                 onClick={() => {
                   AddToCart(ArrayProducto);
-                }}
-                style={{
-                  background: "rgb(238,238,240)",
-                  padding: "5px 10px 5px 70px",
-                  marginLeft: "5rem",
-                  border: "none",
-                }}
-              >
-                {" "}
-                agregar al carrito{" "}
+                }}>  
+                agregar al carrito
               </button>
             </Card.Link>
           </Link>
-        ) : null }
+        ) : null}
       </div>
     </div>
   );

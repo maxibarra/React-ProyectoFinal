@@ -7,7 +7,7 @@ function CartWidget() {
     <div className="shop-cart">
         
       <Link  to="/Cart">
-        <img src="/assets/shop-cart.png" alt="shop-Cart" />
+        <img src="/assets/carrito.png" alt="shop-Cart" />
       </Link>
     </div>
   );

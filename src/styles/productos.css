@@ -1,0 +1,12 @@
+
+.lista{
+    background:rgb(238,238,240); 
+    padding:1rem 20rem;
+}
+.lista h1{
+    font-size:65px;
+    margin:10px;
+    text-shadow: 4px 4px 4px  grey;
+    padding-bottom: 25px;
+    text-align: center;
+}

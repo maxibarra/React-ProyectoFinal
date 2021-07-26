@@ -1,0 +1,22 @@
+.Nosotros{
+    padding:20px;
+    background-color: rgb(238,238,240);
+    padding-bottom: 130px;
+}
+
+.Nosotros h3{
+    font-size:55px;
+    text-align: center;
+}
+.Nosotros p{
+    font-size: 25px;
+    font-weight: 600;
+
+}
+.acercaDe{
+    background-color:white;
+    font-size: 45px;
+    margin:50px;
+    padding:20px;
+    border: 2px solid;
+}

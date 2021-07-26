@@ -22,13 +22,13 @@ const ItemDetailConteiner = () => {
   };
 
   return (
-    <div style={{ background: "rgb(247,238,224)", padding: "4rem 15rem" }}>
+    <div>
+       <h1>Lista de Productos</h1>
       {data.map((item) => (
         <Card
           key={item.id}
           style={{
-            width: "45rem",
-            padding: "1rem",
+            width: "35rem",
             display: "flex",
             flexDirection: "row",
             margin: "15px",
