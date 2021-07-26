@@ -17,7 +17,7 @@ function CartConteiner() {
  
     useEffect(() => {
       ObtenerTotal();
-    }, [cart]);
+    }, []);
   
     if (cart.length > 0) {
       return (
